@@ -8,8 +8,8 @@ Aplikasi web untuk mengelola penyewaan alat musik mistis. Ada dua peran: **Admin
 - **Nama proyek:** Sistem Rental Alat Musik Mistis
 - **Anggota tim:**
   
-  |------|-----|
-  | Fathur Rizki Rahmadi | 102022580007 |
+  
+  | Fathur Rizki Rahmadi | 102022580007 
   | Alvaritzy Maulidan Risnandar | 102022300308 |
   | isha alviandi | 102022300367 | 
 
