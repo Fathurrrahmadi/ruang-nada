@@ -43,11 +43,11 @@ Aplikasi web untuk mengelola penyewaan alat musik mistis. Ada dua peran: **Admin
 
 ## Skema database
 
-![Skema database]
+
 
 ## Demo
 
-Rekaman demo: 
+Rekaman demo: https://drive.google.com/file/d/1SYeLR6FvTac2m46l3noms6vo2BCvLx2S/view?usp=sharing
 
 ## Cara menjalankan
 
