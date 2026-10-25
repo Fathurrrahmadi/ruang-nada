@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kelola Kategori - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <aside id="sidebar" class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block"></aside>
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64"></header>
+
+  <main class="pt-16 md:ml-64">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Manajemen Kategori</h1>
+        <p class="mt-1 text-sm text-outline">
+          Satu unit bisa punya beberapa kategori, dan satu kategori bisa dipakai banyak unit.
+          Nama kategori harus unik.
+        </p>
+      </div>
+
+      <div class="grid gap-6 xl:grid-cols-3">
+
+        <!-- tabel kategori -->
+        <section class="overflow-hidden rounded-xl bg-surface-container-lowest xl:col-span-2">
+          <div class="flex items-center justify-between bg-surface-container-low px-4 py-3">
+            <span class="text-xs uppercase tracking-wider text-outline">Daftar Kategori</span>
+            <span id="total" class="text-xs text-outline"></span>
+          </div>
+          <table class="w-full text-left">
+            <thead>
+              <tr class="text-xs uppercase tracking-wider text-outline">
+                <th class="px-4 py-3">Nama Kategori</th>
+                <th class="px-4 py-3">Jumlah Unit</th>
+                <th class="px-4 py-3 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="category-rows"></tbody>
+          </table>
+        </section>
+
+        <!-- form tambah / ubah -->
+        <section class="self-start overflow-hidden rounded-xl bg-surface-container-low">
+          <div class="bg-surface-container px-4 py-3">
+            <h2 id="form-title" class="text-lg font-semibold">Tambah Kategori</h2>
+          </div>
+
+          <form id="category-form" class="space-y-4 p-4" novalidate>
+            <div>
+              <label for="name" class="mb-1 block text-sm font-semibold">Nama Kategori</label>
+              <input id="name" type="text" placeholder="contoh: Ritual"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+              <p id="error-name" class="mt-1 hidden text-sm text-error"></p>
+            </div>
+
+            <div class="flex justify-end gap-2">
+              <button type="button" onclick="resetForm()"
+                class="rounded-lg bg-surface-container px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container-high">
+                Batal
+              </button>
+              <button type="submit"
+                class="rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-on-primary-container hover:opacity-90">
+                Simpan
+              </button>
+            </div>
+          </form>
+
+          <p id="delete-warning" class="m-4 mt-0 hidden rounded-lg bg-error-container p-3 text-sm text-on-error-container"></p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/kategori.js"></script>
+</body>
+</html>

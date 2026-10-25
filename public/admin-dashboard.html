@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <aside id="sidebar" class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block"></aside>
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64"></header>
+
+  <main class="pt-16 md:ml-64">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Dashboard</h1>
+        <p class="mt-1 text-sm text-outline">Ringkasan unit, anggota, dan transaksi sewa yang sedang berjalan.</p>
+      </div>
+
+      <!-- kartu ringkasan, isinya diisi dari dashboard.js -->
+      <div id="summary" class="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-6"></div>
+
+      <!-- pintasan -->
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <a href="admin-unit.html" class="flex items-center gap-3 rounded-xl bg-surface-container-low p-4 hover:bg-surface-container">
+          <span class="icon h-7 w-7 text-primary">library_music</span>
+          <div>
+            <div class="font-semibold">Kelola Unit</div>
+            <div class="text-xs text-outline">Tambah, ubah, hapus unit</div>
+          </div>
+        </a>
+        <a href="admin-kategori.html" class="flex items-center gap-3 rounded-xl bg-surface-container-low p-4 hover:bg-surface-container">
+          <span class="icon h-7 w-7 text-primary">category</span>
+          <div>
+            <div class="font-semibold">Kelola Kategori</div>
+            <div class="text-xs text-outline">Pengelompokan instrumen</div>
+          </div>
+        </a>
+        <a href="admin-anggota.html" class="flex items-center gap-3 rounded-xl bg-surface-container-low p-4 hover:bg-surface-container">
+          <span class="icon h-7 w-7 text-primary">group</span>
+          <div>
+            <div class="font-semibold">Kelola Anggota</div>
+            <div class="text-xs text-outline">Akun dan profil</div>
+          </div>
+        </a>
+        <a href="admin-disewa.html" class="flex items-center gap-3 rounded-xl bg-surface-container-low p-4 hover:bg-surface-container">
+          <span class="icon h-7 w-7 text-secondary">assignment_return</span>
+          <div>
+            <div class="font-semibold">Proses Pengembalian</div>
+            <div class="text-xs text-outline">Unit yang sedang disewa</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- sewa yang jatuh temponya paling dekat -->
+      <section class="overflow-hidden rounded-xl bg-surface-container-lowest">
+        <div class="flex items-center justify-between bg-surface-container-low px-4 py-3">
+          <span class="text-xs uppercase tracking-wider text-outline">Sewa aktif dengan jatuh tempo terdekat</span>
+          <a href="admin-disewa.html" class="text-sm text-primary hover:underline">Lihat semua</a>
+        </div>
+        <table class="w-full text-left">
+          <thead>
+            <tr class="text-xs uppercase tracking-wider text-outline">
+              <th class="px-4 py-3">Kode</th>
+              <th class="px-4 py-3">Anggota</th>
+              <th class="px-4 py-3">Unit</th>
+              <th class="px-4 py-3">Jatuh Tempo</th>
+              <th class="px-4 py-3">Status</th>
+            </tr>
+          </thead>
+          <tbody id="upcoming-rows"></tbody>
+        </table>
+        <p id="empty-message" class="hidden p-6 text-center text-sm text-outline">Tidak ada unit yang sedang disewa.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

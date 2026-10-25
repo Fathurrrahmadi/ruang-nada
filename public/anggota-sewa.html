@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sewa Saya - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6"></header>
+
+  <main class="pt-16">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Sewa Saya</h1>
+        <p class="mt-1 text-sm text-outline">Unit yang sedang atau pernah kamu sewa. Hanya transaksi milikmu yang tampil.</p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="rounded-xl bg-surface-container-low p-4">
+          <div class="text-xs uppercase tracking-wider text-outline">Unit Aktif</div>
+          <div class="mt-1 font-serif text-4xl text-primary"><span id="active-count">0</span> <span class="text-xl text-outline">/ 2</span></div>
+          <div class="text-xs text-outline">Batas maksimal 2 unit aktif.</div>
+        </div>
+        <div class="rounded-xl bg-surface-container-low p-4">
+          <div class="text-xs uppercase tracking-wider text-outline">Jatuh Tempo Terdekat</div>
+          <div id="nearest-due" class="mt-1 font-serif text-3xl text-secondary">-</div>
+          <div class="text-xs text-outline">Durasi sewa standar maksimal 5 hari.</div>
+        </div>
+        <div class="rounded-xl bg-surface-container-low p-4">
+          <div class="text-xs uppercase tracking-wider text-outline">Total Transaksi</div>
+          <div id="total-count" class="mt-1 font-serif text-4xl text-tertiary">0</div>
+          <div class="text-xs text-outline">Termasuk yang sudah selesai.</div>
+        </div>
+      </div>
+
+      <p class="rounded-xl bg-surface-container-low p-4 text-sm text-on-surface-variant">
+        <strong class="text-secondary">Ingin mengembalikan unit?</strong>
+        Hubungi Admin. Pengembalian hanya bisa diproses Admin, jadi tidak ada tombol pengembalian di halaman ini.
+      </p>
+
+      <section class="overflow-hidden rounded-xl bg-surface-container-lowest">
+        <div class="flex flex-wrap items-center justify-between gap-2 bg-surface-container-low px-4 py-3">
+          <div id="tabs" class="flex flex-wrap gap-1"></div>
+          <span id="total" class="text-xs text-outline"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="text-xs uppercase tracking-wider text-outline">
+                <th class="px-4 py-3">Kode</th>
+                <th class="px-4 py-3">Unit</th>
+                <th class="px-4 py-3">Tanggal Sewa</th>
+                <th class="px-4 py-3">Jatuh Tempo</th>
+                <th class="px-4 py-3">Dikembalikan</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3">Denda</th>
+              </tr>
+            </thead>
+            <tbody id="rental-rows"></tbody>
+          </table>
+        </div>
+        <p id="empty-message" class="hidden p-6 text-center text-sm text-outline">Belum ada transaksi pada kategori ini.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/sewa.js"></script>
+</body>
+</html>

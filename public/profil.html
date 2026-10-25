@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6"></header>
+
+  <main class="pt-16">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Profil Saya</h1>
+        <p class="mt-1 text-sm text-outline">Kamu hanya bisa melihat dan mengubah profil milikmu sendiri.</p>
+      </div>
+
+      <section class="max-w-2xl overflow-hidden rounded-xl bg-surface-container-low">
+        <div class="flex items-center justify-between bg-surface-container px-4 py-3">
+          <h2 class="text-lg font-semibold">Ubah Profil</h2>
+          <span id="member-status" class="text-sm"></span>
+        </div>
+
+        <form id="profile-form" class="space-y-4 p-4" novalidate>
+          <div>
+            <label for="name" class="mb-1 block text-sm font-semibold">Nama Lengkap</label>
+            <input id="name" type="text" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+            <p id="error-name" class="mt-1 hidden text-sm text-error"></p>
+          </div>
+
+          <div>
+            <label for="email" class="mb-1 block text-sm font-semibold">Email</label>
+            <input id="email" type="email" readonly class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary opacity-60" />
+            <p class="mt-1 text-xs text-outline">Email tidak bisa diubah dari halaman ini.</p>
+          </div>
+
+          <div>
+            <label for="phone" class="mb-1 block text-sm font-semibold">Telepon</label>
+            <input id="phone" type="text" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+          </div>
+
+          <div>
+            <label for="address" class="mb-1 block text-sm font-semibold">Alamat</label>
+            <textarea id="address" rows="3" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary"></textarea>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit"
+              class="rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-on-primary-container hover:opacity-90">
+              Simpan Profil
+            </button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/profil.js"></script>
+</body>
+</html>

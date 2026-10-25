@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Unit - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6"></header>
+
+  <main class="pt-16">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <a href="katalog.html" class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+        <span class="icon">arrow_back</span>
+        Kembali ke daftar unit
+      </a>
+
+      <div class="grid items-start gap-6 lg:grid-cols-3">
+
+        <!-- info unit, diisi dari detail.js -->
+        <section id="unit-info" class="space-y-3 rounded-xl bg-surface-container-low p-6 lg:col-span-2"></section>
+
+        <!-- form pengajuan sewa -->
+        <section class="overflow-hidden rounded-xl bg-surface-container-low">
+          <div class="bg-surface-container px-4 py-3">
+            <h2 class="text-lg font-semibold">Ajukan Penyewaan</h2>
+            <p class="text-xs text-outline">Maksimal 2 unit aktif, durasi standar maksimal 5 hari</p>
+          </div>
+
+          <form id="rental-form" class="space-y-4 p-4" novalidate>
+            <p id="form-alert" class="hidden rounded-lg bg-error-container p-3 text-sm text-on-error-container"></p>
+
+            <div>
+              <label for="rented_at" class="mb-1 block text-sm font-semibold">Tanggal Sewa</label>
+              <input id="rented_at" type="date" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+              <p id="error-rented_at" class="mt-1 hidden text-sm text-error"></p>
+            </div>
+
+            <div>
+              <label for="due_at" class="mb-1 block text-sm font-semibold">Tanggal Jatuh Tempo</label>
+              <input id="due_at" type="date" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+              <p id="error-due_at" class="mt-1 hidden text-sm text-error"></p>
+              <p class="mt-1 text-xs text-outline">Usulan: 5 hari setelah tanggal sewa.</p>
+            </div>
+
+            <button id="submit-button" type="submit"
+              class="w-full rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-on-primary-container hover:opacity-90 disabled:opacity-50">
+              Ajukan Penyewaan
+            </button>
+          </form>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

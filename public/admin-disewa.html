@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit Sedang Disewa - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <aside id="sidebar" class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block"></aside>
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64"></header>
+
+  <main class="pt-16 md:ml-64">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Unit Sedang Disewa</h1>
+        <p class="mt-1 text-sm text-outline">
+          Daftar unit yang belum dikembalikan. Anggota harus menghubungi Admin untuk mengembalikan unit,
+          dan hanya Admin yang bisa memproses pengembalian.
+        </p>
+      </div>
+
+      <section class="overflow-hidden rounded-xl bg-surface-container-lowest">
+        <div class="flex items-center justify-between bg-surface-container-low px-4 py-3">
+          <span class="text-xs uppercase tracking-wider text-outline">Transaksi Berjalan</span>
+          <span id="total" class="text-xs text-outline"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="text-xs uppercase tracking-wider text-outline">
+                <th class="px-4 py-3">Kode</th>
+                <th class="px-4 py-3">Anggota</th>
+                <th class="px-4 py-3">Unit</th>
+                <th class="px-4 py-3">Tanggal Sewa</th>
+                <th class="px-4 py-3">Jatuh Tempo</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="rental-rows"></tbody>
+          </table>
+        </div>
+        <p id="empty-message" class="hidden p-6 text-center text-sm text-outline">Tidak ada unit yang sedang disewa.</p>
+      </section>
+
+      <p class="text-sm text-outline">
+        Kalau pengembalian melewati jatuh tempo, transaksi ditandai terlambat dan denda dicatat sesuai kebijakan
+        yang dikonfirmasi. Nominal denda belum ditetapkan, jadi belum dihitung otomatis.
+      </p>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/disewa.js"></script>
+</body>
+</html>

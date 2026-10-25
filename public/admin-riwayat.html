@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riwayat Peminjaman - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <aside id="sidebar" class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block"></aside>
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64"></header>
+
+  <main class="pt-16 md:ml-64">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div class="no-print">
+        <h1 class="font-serif text-3xl">Riwayat Peminjaman</h1>
+        <p class="mt-1 text-sm text-outline">Seluruh riwayat peminjaman anggota. Bisa disaring per anggota lalu dicetak.</p>
+      </div>
+
+      <!-- judul ini hanya muncul saat dicetak -->
+      <div class="print-only">
+        <h1 style="font-size: 20px; font-weight: bold;">Laporan Riwayat Peminjaman - Ruang Nada</h1>
+        <p id="print-info" style="font-size: 12px;"></p>
+      </div>
+
+      <div class="no-print flex flex-wrap items-end justify-between gap-4">
+        <div class="w-72">
+          <label for="filter" class="mb-1 block text-sm font-semibold">Anggota</label>
+          <select id="filter" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary">
+            <option value="">Semua anggota</option>
+          </select>
+        </div>
+        <button onclick="window.print()"
+          class="inline-flex items-center gap-1 rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-on-primary-container hover:opacity-90">
+          <span class="icon">print</span>
+          Cetak Riwayat
+        </button>
+      </div>
+
+      <section class="overflow-hidden rounded-xl bg-surface-container-lowest">
+        <div class="bg-surface-container-low px-4 py-3">
+          <span id="total" class="text-xs text-outline"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="text-xs uppercase tracking-wider text-outline">
+                <th class="px-4 py-3">Kode</th>
+                <th class="px-4 py-3">Anggota</th>
+                <th class="px-4 py-3">Unit</th>
+                <th class="px-4 py-3">Tanggal Sewa</th>
+                <th class="px-4 py-3">Jatuh Tempo</th>
+                <th class="px-4 py-3">Dikembalikan</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3">Denda</th>
+              </tr>
+            </thead>
+            <tbody id="history-rows"></tbody>
+          </table>
+        </div>
+        <p id="empty-message" class="hidden p-6 text-center text-sm text-outline">Belum ada riwayat.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/riwayat.js"></script>
+</body>
+</html>

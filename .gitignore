@@ -1,0 +1,9 @@
+# database lokal (dibuat otomatis saat server pertama jalan)
+ruangnada.db
+
+# file otomatis Python
+__pycache__/
+*.pyc
+
+# file otomatis macOS
+.DS_Store

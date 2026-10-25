@@ -1,0 +1,51 @@
+/* Ikon
+   Di HTML kita tulis: <span class="icon">edit_note</span>
+   File js/icons.js akan mengganti tulisan itu menjadi gambar SVG.
+   Ukuran bisa diubah lewat class Tailwind, contoh: w-6 h-6 */
+.icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0;          /* sembunyikan tulisan nama ikon */
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  display: block;
+}
+
+/* Bagian yang hanya muncul saat dicetak */
+.print-only {
+  display: none;
+}
+
+/* Saat dicetak (Cmd + P): sembunyikan menu, tombol, dan form */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  body,
+  main {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  * {
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+}

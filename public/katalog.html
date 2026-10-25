@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar Unit - Ruang Nada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-background text-on-surface">
+  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6"></header>
+
+  <main class="pt-16">
+    <div class="mx-auto max-w-7xl space-y-6 p-6">
+
+      <div>
+        <h1 class="font-serif text-3xl">Eksplorasi Instrumen</h1>
+        <p class="mt-1 text-sm text-outline">Cari instrumen berdasarkan nama, lalu ajukan penyewaan.</p>
+      </div>
+
+      <p id="not-member" class="hidden rounded-xl bg-error-container p-4 text-sm text-on-error-container">
+        Kamu belum terdaftar sebagai anggota, jadi belum bisa menyewa. Hubungi Admin untuk menyelesaikan pendaftaran.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-surface-container-low p-4">
+        <form id="search-form" class="flex min-w-[260px] flex-1 gap-2">
+          <input id="search" type="text" placeholder="Cari nama unit..." class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+          <button type="submit"
+            class="inline-flex items-center gap-1 rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-on-primary-container hover:opacity-90">
+            <span class="icon">search</span>
+            Cari
+          </button>
+        </form>
+        <div class="text-sm text-outline">Unit aktif milikmu: <span id="active-count" class="text-secondary">0</span> / 2</div>
+      </div>
+
+      <div id="unit-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+      <p id="empty-message" class="hidden p-6 text-center text-sm text-outline">Tidak ada unit yang cocok dengan pencarian.</p>
+
+    </div>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/katalog.js"></script>
+</body>
+</html>
