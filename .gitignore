@@ -7,3 +7,14 @@ __pycache__/
 
 # file otomatis macOS
 .DS_Store
+
+# backup database dari konversi_kode.py
+*.bak-*
+*.db-journal
+
+# opsional, kalau suatu saat dipakai
+.env
+.venv/
+# backup database dari konversi_kode.py
+*.bak-*
+*.db-journal

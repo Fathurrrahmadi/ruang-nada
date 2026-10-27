@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoC Tailwind CSS - Ruang Nada</title>
+
+    <!-- Memuat library Tailwind CSS via CDN sesuai dokumen spesifikasi -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+    <!-- Desain Kartu Unit Alat Musik -->
+    <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+
+        <div class="flex justify-between items-start mb-4">
+            <!-- Badge Status -->
+            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Tersedia</span>
+            <!-- Kategori -->
+            <span class="text-gray-500 text-xs font-semibold">Gamelan / Mistis</span>
+        </div>
+
+        <!-- Nama Alat Musik -->
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Gong Pemanggil Arwah</h2>
+
+        <p class="text-gray-600 text-sm mb-6">
+            Bunyinya bergema menembus dimensi. Digunakan khusus pada malam Jumat Kliwon.
+        </p>
+
+        <!-- Harga -->
+        <div class="border-t pt-4 mb-4">
+            <span class="text-2xl font-bold text-gray-900">Rp200.000</span>
+            <span class="text-gray-500 text-sm">/ hari</span>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Ajukan Sewa
+        </button>
+
+    </div>
+
+</body>
+
+</html>

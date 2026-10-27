@@ -20,6 +20,7 @@ PUBLIC_DIR = os.path.realpath(os.path.join(os.path.dirname(os.path.abspath(__fil
 # <id> di path akan diambil sebagai angka dan masuk ke req.ids
 ROUTES = [
     ("POST",   "/api/login",                 "public",  auth.login),
+    ("POST",   "/api/register",              "public",  auth.register),
     ("POST",   "/api/logout",                "login",   auth.logout),
     ("GET",    "/api/me",                    "login",   auth.me),
 
@@ -233,6 +234,7 @@ class Handler(BaseHTTPRequestHandler):
         if name in MEMBER_PAGES and user["role"] != "anggota":
             return "admin-dashboard.html"             # admin coba buka halaman anggota
         return None
+
 
 
 def main():

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,9 +9,14 @@
   <script src="js/tailwind-config.js"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="min-h-screen bg-background text-on-surface">
-  <aside id="sidebar" class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block"></aside>
-  <header id="topbar" class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64"></header>
+  <aside id="sidebar"
+    class="no-print fixed left-0 top-0 z-30 hidden h-screen w-64 border-r border-outline-variant bg-surface-container-low p-4 md:block">
+  </aside>
+  <header id="topbar"
+    class="no-print fixed left-0 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-outline-variant bg-surface px-6 md:left-64">
+  </header>
 
   <main class="pt-16 md:ml-64">
     <div class="mx-auto max-w-7xl space-y-6 p-6">
@@ -53,32 +59,37 @@
           </div>
 
           <form id="unit-form" class="space-y-4 p-4" novalidate>
-            <div>
+            <div class="hidden">
               <label for="unit_code" class="mb-1 block text-sm font-semibold">Kode Unit</label>
-              <input id="unit_code" type="text" placeholder="contoh: RN-GML-003" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary uppercase" />
+              <input id="unit_code" type="text" placeholder="contoh: RN-GML-003"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary uppercase" />
               <p id="error-unit_code" class="mt-1 hidden text-sm text-error"></p>
             </div>
 
             <div>
               <label for="unit_name" class="mb-1 block text-sm font-semibold">Nama Unit</label>
-              <input id="unit_name" type="text" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+              <input id="unit_name" type="text"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
               <p id="error-unit_name" class="mt-1 hidden text-sm text-error"></p>
             </div>
 
             <div>
               <label for="description" class="mb-1 block text-sm font-semibold">Deskripsi</label>
-              <textarea id="description" rows="2" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary"></textarea>
+              <textarea id="description" rows="2"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary"></textarea>
             </div>
 
             <div>
               <label for="daily_rate" class="mb-1 block text-sm font-semibold">Tarif Sewa Harian (Rp)</label>
-              <input id="daily_rate" type="number" min="0" step="1000" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
+              <input id="daily_rate" type="number" min="0" step="1000"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary" />
               <p id="error-daily_rate" class="mt-1 hidden text-sm text-error"></p>
             </div>
 
             <div>
               <label for="status" class="mb-1 block text-sm font-semibold">Status</label>
-              <select id="status" class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary">
+              <select id="status"
+                class="w-full rounded-lg bg-surface-container-lowest px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary">
                 <option value="tersedia">Tersedia</option>
                 <option value="maintenance">Maintenance</option>
                 <option value="disewa" disabled>Disewa (otomatis)</option>
@@ -88,7 +99,8 @@
 
             <div>
               <span class="mb-1 block text-sm font-semibold">Kategori (boleh lebih dari satu)</span>
-              <div id="category-list" class="grid grid-cols-2 gap-2 rounded-lg bg-surface-container-lowest p-3 text-sm"></div>
+              <div id="category-list"
+                class="grid grid-cols-2 gap-2 rounded-lg bg-surface-container-lowest p-3 text-sm"></div>
               <p id="error-category_ids" class="mt-1 hidden text-sm text-error"></p>
             </div>
 
@@ -104,7 +116,8 @@
             </div>
           </form>
 
-          <p id="delete-warning" class="m-4 mt-0 hidden rounded-lg bg-error-container p-3 text-sm text-on-error-container"></p>
+          <p id="delete-warning"
+            class="m-4 mt-0 hidden rounded-lg bg-error-container p-3 text-sm text-on-error-container"></p>
         </section>
 
       </div>
@@ -117,4 +130,5 @@
   <script src="js/layout.js"></script>
   <script src="js/unit.js"></script>
 </body>
+
 </html>

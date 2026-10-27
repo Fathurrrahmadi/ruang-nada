@@ -24,6 +24,27 @@ def login(req):
     req.cookie_to_set = "sid=" + token + "; Path=/; HttpOnly; SameSite=Lax"
     return {"role": user["role"], "name": user["name"], "home": home}
 
+def register(req):
+    name = clean_text(req.body.get("name"))
+    email = clean_text(req.body.get("email"))
+    password = req.body.get("password") or ""
+
+    check(name, "Nama wajib diisi.", "name")
+    check(email, "Email wajib diisi.", "email")
+    check(is_valid_email(email), "Format email tidak valid.", "email")
+    check(len(password) >= 6, "Kata sandi minimal 6 karakter.", "password")
+
+    same_email = req.db.execute(
+        "SELECT id FROM users WHERE lower(email) = lower(?)", (email,)
+    ).fetchone()
+    check(same_email is None, "Email sudah terdaftar.", "email", 409)
+
+    req.db.execute(
+        "INSERT INTO users (name, email, password, role, is_member) VALUES (?, ?, ?, ?, ?)",
+        (name, email, security.hash_password(password), "anggota", 1),
+    )
+    return login(req)
+
 
 def logout(req):
     security.delete_session(req.token)
